@@ -21,7 +21,8 @@ console.log("clicked");
  
   ndef.addEventListener("reading", ({ message, serialNumber }) => {
    log(`> Serial Number: ${serialNumber}`);
-   log(`> Records: (${message.records})`);
+   log(`> Records: (${Object.keys(message)})`);
+   log(`> Records: (${message})`);
    log(message.records);
   });
  } catch (error) {
