@@ -24,6 +24,12 @@ console.log("clicked");
    log(`> Records: (${Object.keys(message)})`);
    log(`> Records: (${message})`);
    log(message.records);
+    for (const record of message.records) {
+      console.log(`Record type:  ${record.recordType}`);
+      console.log(`MIME type:    ${record.mediaType}`);
+      console.log(`Record id:    ${record.id}`);
+      console.log(`Record RAW data: ${record.data.buffer}`);
+      console.log(`Record data: ${new TextDecoder(message.encoding).decode(record.data.buffer)}`);
   });
  } catch (error) {
   log("Argh! " + error);
